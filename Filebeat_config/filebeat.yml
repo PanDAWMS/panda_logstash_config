@@ -1,0 +1,118 @@
+filebeat:
+  prospectors:
+    -
+      #########panda-activator.log#########
+      paths:
+        - /var/log/Logs_file/panda-Activator.log-20160705/*
+      input_type: log
+      document_type: activatorlog
+    -
+      paths:
+        - /var/log/Logs_file/panda_server_access_log-20160705/*
+      input_type: log
+      document_type: serveraccess
+    - 
+      paths:
+        - /var/log/Logs_file/panda_server_error_log-20160705/*
+      input_type: log
+      document_type: servererror
+    - 
+      paths:
+        - /var/log/Logs_file/panda-broker.log-20160705/*
+      input_type: log
+      document_type: brokerlog
+     - 
+      paths:
+        - /var/log/Logs_file/panda-Utils.log-20160705/*
+      input_type: log
+      document_type: utils
+     - 
+      paths:
+        - /var/log/Logs_file/panda-broker_util.log-20160705/*
+      input_type: log
+      document_type: brokerutil
+     - 
+      paths:
+        - /var/log/Logs_file/panda-UserIF.log-20160705/*
+      input_type: log
+      document_type: userif
+     - 
+      paths:
+        - /var/log/Logs_file/panda-Entry.log-20160705/*
+      input_type: log
+      document_type: entry
+     - 
+      paths:
+        - /var/log/Logs_file/panda-Watcher.log-20160705/*
+      input_type: log
+      document_type: watcher
+     - 
+      paths:
+        - /var/log/Logs_file/panda-PilotRequests.log-20160705/*
+      input_type: log
+      document_type: pilotrequest
+     - 
+      #########Multiline section###############
+      #########panda-RetrialModule.log#########
+      paths:
+        - /var/log/Logs_file/panda-RetrialModule.log-20160705/*
+      input_type: log
+      document_type: retrialmodule
+      multiline:
+        pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+        negate: true
+        match: after
+     - 
+     #########panda-Setupper.log#########
+      paths:
+        - /var/log/Logs_file/panda-Setupper.log-20160705/*
+      input_type: log
+      document_type: setupper
+      multiline:
+        pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+        negate: true
+        match: after
+     - 
+     #########panda.log#########
+      paths:
+        - /var/log/Logs_file/panda.log-20160705/*
+      input_type: log
+      document_type: pandalog
+      multiline:
+        pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+        negate: true
+        match: after
+     - 
+     #########panda.add.log#########
+      paths:
+        - /var/log/Logs_file/panda.add-20160705/*
+      input_type: log
+      document_type: addlog
+      multiline:
+        pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+        negate: true
+        match: after
+     - 
+     #########panda-proxyCache.log#########
+      paths:
+        - /var/log/Logs_file/panda-proxyCache.log-20160705/*
+      input_type: log
+      document_type: addlog
+      multiline:
+        pattern: '^start at'
+        negate: false
+        match: after
+  registry_file: /var/lib/filebeat/registry
+
+output:
+  logstash:
+    hosts: ["aipanda145:5044"]
+    worker: 1
+    compression_level: 3
+    index: pandalogs
+
+logging:
+  files:
+    path: /var/log/
+    name: mybeat
+    rotateeverybytes: 10485760 # = 10MB
