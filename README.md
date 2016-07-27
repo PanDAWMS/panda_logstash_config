@@ -64,6 +64,6 @@ sudo yum install logstash
 
 * Manage the logstash daemon
 ```
-service logstash configtest
-/opt/logstash/bin/logstash -f /etc/logstash/conf.d &
+service logstash configtest/stop/start/status
+Better not to use: /opt/logstash/bin/logstash -f /etc/logstash/conf.d &
 ```
