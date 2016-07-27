@@ -7,50 +7,167 @@ filebeat:
       input_type: log
       document_type: activatorlog
     -
+      #########panda_server_access#########
       paths:
         - /var/log/panda/panda_server_access_log
       input_type: log
       document_type: serveraccess
     -
+      #########panda_server_error#########    
       paths:
         - /var/log/panda/panda_server_error_log
       input_type: log
       document_type: servererror
     -
+      #########panda-broker.log#########       
       paths:
         - /var/log/panda/panda-broker.log
       input_type: log
       document_type: brokerlog
     -
+      #########panda_Utils.log#########       
       paths:
         - /var/log/panda/panda-Utils.log
       input_type: log
       document_type: utils
     -
+      #########panda-broker_util.log#########       
       paths:
         - /var/log/panda/panda-broker_util.log
       input_type: log
       document_type: brokerutil
     -
+      #########panda-UserIF.log#########      
       paths:
         - /var/log/panda/panda-UserIF.log
       input_type: log
       document_type: userif
     -
+      #########panda-Entry.log#########      
       paths:
         - /var/log/panda/panda-Entry.log
       input_type: log
       document_type: entry
     -
+      #########panda-Watcher.log#########    
       paths:
         - /var/log/panda/panda-Watcher.log
       input_type: log
       document_type: watcher
     -
+      #########panda-PilotRequests.log#########    
       paths:
         - /var/log/panda/panda-PilotRequests.log
       input_type: log
       document_type: pilotrequest
+    -
+      #########panda-AddProcess.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: addprocess
+    -
+      #########panda-Adder.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: adder
+    -
+      #########panda-Closer.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: closer
+    -
+      #########panda-ConBridge.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: conbridge
+    -
+      #########panda-RunRebro.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: runrebro   
+    -
+      #########panda-Configurator.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: configurator     
+    -
+      #########panda-Configurator_DBIF.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: configuratordbif
+    -
+      #########panda-CopyArchive.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: copyarchive
+    -
+      #########panda-DatasetManager.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: datasetmanager
+    -
+      #########panda-DBproxypool.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: dbproxypool
+    -
+      #########panda-DynDataDistributor.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: dyndatadistributor
+    -
+      #########panda-Finisher.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: finisher
+    -
+      #########panda-Initializer.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: initializer
+    -
+      #########panda-Notifier.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: notifier
+    -
+      #########panda-PrioryMassage.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: priorymassage
+    -
+      #########panda-ProcessLimiter.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: processlimiter
+    -
+      #########panda-SiteMapper.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: sitemapper
+    -
+      #########panda-TaskBuffer.log#########    
+      paths:
+        - /var/log/panda/!!!!!!!!!!!!.log
+      input_type: log
+      document_type: taskbuffer       
     -
       #########Multiline section###############
       #########panda-RetrialModule.log#########
@@ -97,7 +214,7 @@ filebeat:
       paths:
         - /var/log/panda/panda-proxyCache.log
       input_type: log
-      document_type: addlog
+      document_type: proxycache
       multiline:
         pattern: '^start at'
         negate: false
