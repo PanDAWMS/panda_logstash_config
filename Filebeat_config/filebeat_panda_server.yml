@@ -63,109 +63,109 @@ filebeat:
     -
       #########panda-AddProcess.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-add_process.log.log
       input_type: log
       document_type: addprocess
     -
       #########panda-Adder.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-Adder.log
       input_type: log
       document_type: adder
     -
       #########panda-Closer.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-Closer.log
       input_type: log
       document_type: closer
     -
       #########panda-ConBridge.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-ConBridge.log
       input_type: log
       document_type: conbridge
     -
       #########panda-RunRebro.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-runRebro.log
       input_type: log
       document_type: runrebro   
     -
       #########panda-Configurator.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-Configurator.log
       input_type: log
       document_type: configurator     
     -
       #########panda-Configurator_DBIF.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-Configurator_DBIF.log
       input_type: log
       document_type: configuratordbif
     -
       #########panda-CopyArchive.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-copyArchive.log
       input_type: log
       document_type: copyarchive
     -
       #########panda-DatasetManager.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-datasetManager.log
       input_type: log
       document_type: datasetmanager
     -
       #########panda-DBproxypool.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-DBProxyPool.log
       input_type: log
       document_type: dbproxypool
     -
       #########panda-DynDataDistributor.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-DynDataDistributer.log
       input_type: log
       document_type: dyndatadistributor
     -
       #########panda-Finisher.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-Finisher.log
       input_type: log
       document_type: finisher
     -
       #########panda-Initializer.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-Initializer.log
       input_type: log
       document_type: initializer
     -
       #########panda-Notifier.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-Notifier.log
       input_type: log
       document_type: notifier
     -
       #########panda-PrioryMassage.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-prioryMassage.log
       input_type: log
       document_type: priorymassage
     -
       #########panda-ProcessLimiter.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-ProcessLimiter.log
       input_type: log
       document_type: processlimiter
     -
       #########panda-SiteMapper.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-SiteMapper.log
       input_type: log
       document_type: sitemapper
     -
       #########panda-TaskBuffer.log#########    
       paths:
-        - /var/log/panda/!!!!!!!!!!!!.log
+        - /var/log/panda/panda-TaskBuffer.log
       input_type: log
       document_type: taskbuffer       
     -
