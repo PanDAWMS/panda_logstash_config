@@ -217,7 +217,7 @@ filebeat:
       document_type: proxycache
       multiline:
         pattern: '^start at'
-        negate: false
+        negate: true
         match: after
   registry_file: /var/lib/filebeat/registry
 
