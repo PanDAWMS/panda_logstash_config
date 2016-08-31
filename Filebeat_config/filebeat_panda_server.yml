@@ -156,12 +156,14 @@ filebeat:
         - /var/log/panda/panda-ProcessLimiter.log
       input_type: log
       document_type: processlimiter
-    -
+
+    # Site Mapper has no interesting logs
+    #-
       #########panda-SiteMapper.log#########    
-      paths:
-        - /var/log/panda/panda-SiteMapper.log
-      input_type: log
-      document_type: sitemapper
+    #  paths:
+    #    - /var/log/panda/panda-SiteMapper.log
+    #  input_type: log
+    #  document_type: sitemapper
     -
       #########panda-TaskBuffer.log#########    
       paths:
