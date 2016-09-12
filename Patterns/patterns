@@ -1,0 +1,3 @@
+TYPE [a-zA-Z0-9._]+
+NUMBER [0-9]+
+COMMONLOG \[%{HTTPDATE:timestamp}\] %{IPORHOST:hostname} "(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response} (?:%{NUMBER:bytes}|-)
