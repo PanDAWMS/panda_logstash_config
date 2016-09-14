@@ -107,7 +107,7 @@ filebeat:
 output:
   logstash:
     hosts: ["aipanda145:5044"]
-    worker: 1
+    worker: 4
     compression_level: 3
     index: pandalogs
 
