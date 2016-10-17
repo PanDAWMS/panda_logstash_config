@@ -40,7 +40,7 @@ def removeOldDate (olddate,eslogin,espasswd):
 
 def main():
     eslogin = 'es-atlas'
-    espasswd = '***REMOVED***'
+    espasswd = '*********'
     age = int(sys.argv[1])
     if age!=0 or age!= None:
 
