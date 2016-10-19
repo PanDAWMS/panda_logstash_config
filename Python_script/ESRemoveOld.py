@@ -4,9 +4,13 @@ import os
 import re
 import datetime
 import sys
+from configparser import ConfigParser
 
-def getAllDate(eslogin,espasswd):
-    r = requests.get('https://es-atlas.cern.ch:9203/_cat/indices/atlas_pandalogs*?v', auth=(eslogin,espasswd),verify=False)
+
+def getAllDate(eslogin,espasswd,url):
+
+    urlAllDate = url+"*?v"
+    r = requests.get(urlAllDate, auth=(eslogin,espasswd),verify=False)
 
     status_code = r.status_code
     if status_code == 200:
@@ -29,31 +33,40 @@ def getOldDate (inddate,age):
             olddate.append(date)
     return olddate
 
-def removeOldDate (olddate,eslogin,espasswd):
+def removeOldDate (olddate,eslogin,espasswd,url):
     try:
+
         for date_dl in olddate:
-            url = "https://es-atlas.cern.ch:9203/atlas_pandalogs-"+ date_dl.strftime('%Y.%m.%d')
-            rdelete = requests.delete(url, auth=(eslogin,espasswd),verify=False)
+            urlOldDate = url+"-"+ date_dl.strftime('%Y.%m.%d')
+            requests.delete(urlOldDate, auth=(eslogin,espasswd),verify=False)
             print("Succes")
     except:
         print("Error")
 
 def main():
-    eslogin = 'es-atlas'
-    espasswd = '*********'
+    cfg = ConfigParser()
+    cfg.read('config.ini')
+
+    eslogin = cfg.get('server','login')
+    espasswd = cfg.get('server','password')
+    url = cfg.get('server','url')
+    port = cfg.get('server','port')
+    index = cfg.get('server','index')
+    fullurl =url+":"+port+"/"+index
+
     age = int(sys.argv[1])
     if age!=0 or age!= None:
 
-        ind_date = getAllDate(eslogin,espasswd)
+        ind_date = getAllDate(eslogin,espasswd,fullurl)
         old_date = getOldDate(ind_date,age)
         if old_date != 0 or old_date != None:
-            removeOldDate(old_date,eslogin,espasswd)
+            removeOldDate(old_date,eslogin,espasswd,fullurl)
         else:
             print("No date")
     elif age == 0:
-        ind_date = getAllDate(eslogin,espasswd)
-        removeOldDate(ind_date,eslogin,espasswd)
+        ind_date = getAllDate(eslogin,espasswd,fullurl)
+        removeOldDate(ind_date,eslogin,espasswd,fullurl)
     else:
-        print ('Parament is empty or equals 0')
+        print ('Parametr is empty or equals 0')
 if __name__ == "__main__":
     main()
