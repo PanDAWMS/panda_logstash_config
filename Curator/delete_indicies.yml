@@ -2,7 +2,7 @@ actions:
   1:
     action: delete_indices
     description: >-
-      Delete indices older than 14 days (based on index name), for atlas_pandalogs-
+      Delete indices older than 7 days (based on index name), for atlas_pandalogs-
       prefixed indices. Ignore the error if the filter does not result in an
       actionable list of indices (ignore_empty_list) and exit cleanly.
     options:
@@ -20,5 +20,5 @@ actions:
       direction: older
       timestring: '%Y.%m.%d'
       unit: days
-      unit_count: 14
+      unit_count: 7
       exclude:

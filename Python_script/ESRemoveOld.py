@@ -33,6 +33,13 @@ def getOldDate (inddate,age):
             olddate.append(date)
     return olddate
 
+def representsInt(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
 def removeOldDate (olddate,eslogin,espasswd,url):
     try:
 
@@ -43,7 +50,7 @@ def removeOldDate (olddate,eslogin,espasswd,url):
     except:
         print("Error")
 
-def main():
+def main(defaultage):
     cfg = ConfigParser()
     cfg.read('config.ini')
 
@@ -54,9 +61,12 @@ def main():
     index = cfg.get('server','index')
     fullurl =url+":"+port+"/"+index
 
-    age = int(sys.argv[1])
-    if age!=0 or age!= None:
+##    age = int(sys.argv[1])
+    age = cfg.get('server','age')
+    if representsInt(age) == False:
+        age = defaultage
 
+    if age!=0 or age!=None:
         ind_date = getAllDate(eslogin,espasswd,fullurl)
         old_date = getOldDate(ind_date,age)
         if old_date != 0 or old_date != None:
@@ -69,4 +79,4 @@ def main():
     else:
         print ('Parametr is empty or equals 0')
 if __name__ == "__main__":
-    main()
+    main(14)
