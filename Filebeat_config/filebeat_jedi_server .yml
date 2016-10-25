@@ -66,6 +66,97 @@ filebeat:
         - /var/log/
       input_type: log
       document_type:atlasprodwatchdog
+    -
+      #########panda-closer.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:closer
+    -
+      #########panda-taskbroker.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:taskbroker
+    -
+      #########panda-atlasanalwatchdog.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:atlasanalwatchdog
+    -
+      #########panda-contentsfeeder.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:contentsfeeder
+    -
+      #########panda-stdout.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:stdout
+    -
+      #########panda-taskbuffer.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:taskbuffer
+    -
+      #########panda-atlasddmclient.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:atlasddmclient
+    -
+      #########panda-atlasanaljobthrottler.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:atlasanaljobthrottler
+    -
+      #########panda-activator.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:activator
+    -
+      #########panda-dbproxypool.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:dbproxypool
+    -
+      #########panda-jeditaskbuffer.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:jeditaskbuffer
+    -
+      #########panda-jobthrottler.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:jobthrottler
+    -
+      #########panda-tasksetupper.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:tasksetupper
+    -
+      #########panda-jobbroker.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:jobbroker
+    -
+      #########panda-watchdog.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:watchdog
+
       #########Multiline section###############
 
   registry_file: /var/lib/filebeat/registry
