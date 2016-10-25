@@ -1,19 +1,71 @@
 filebeat:
   prospectors:
     -
-      ######## ##########
+      ########panda-atlasprodtaskbroker.log ##########
       paths:
         - /var/log/
       input_type: log
-      document_type:
+      document_type:atlasprodtaskbroker
     -
-      #########p#########
+      #########panda-taskrefiner.log#########
       paths:
         - /var/log/
       input_type: log
-      document_type:
+      document_type:taskrefiner
     -
-
+      #########panda-atlasanaljobbroker.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:atlasanaljobbroker
+    -
+      #########panda-atlasprodjobbroker.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:atlasprodjobbroker
+    -
+      #########panda-atlasprodjobbroker.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type: atlasprodjobbroker
+    -
+      #########panda-taskcommando.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:taskcommando
+    -
+      #########panda-atlasprodjobbroker.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:atlasprodjobthrottler
+    -
+      #########panda-jobsplitter.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:jobsplitter
+    -
+      #########panda-atlastasksettuper.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:atlastasksettuper
+    -
+      #########panda-jobgenerator.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:jobgenerator
+    -
+      #########panda-atlasprodwatchdog.log#########
+      paths:
+        - /var/log/
+      input_type: log
+      document_type:atlasprodwatchdog
       #########Multiline section###############
 
   registry_file: /var/lib/filebeat/registry
