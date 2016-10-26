@@ -5,132 +5,132 @@ filebeat:
       document_type: atlasprodtaskbroker
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: taskrefiner
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: atlasanaljobbroker
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: atlasprodjobbroker
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: atlasprodjobbroker
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: taskcommando
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: atlasprodjobthrottler
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: jobsplitter
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: atlastasksettuper
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: jobgenerator
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: atlasprodwatchdog
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: closer
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: taskbroker
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: atlasanalwatchdog
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: contentsfeeder
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: stdout
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: taskbuffer
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: atlasddmclient
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: atlasanaljobthrottler
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: activator
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: dbproxypool
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: jeditaskbuffer
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: jobthrottler
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: tasksetupper
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: jobbroker
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
     - 
       document_type: watchdog
       input_type: log
       paths: 
-        - /var/log/
+        - /var/log/panda/
   registry_file: /var/lib/filebeat/registry
 logging: 
   files: 
