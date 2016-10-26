@@ -1,149 +1,144 @@
---- 
-filebeat: 
-  prospectors: 
-    - 
+---
+filebeat:
+  prospectors:
+    -
       document_type: atlasprodtaskbroker
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-AtlasProdTaskBroker.log
+    -
       document_type: taskrefiner
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-TaskRefiner.log
+    -
       document_type: atlasanaljobbroker
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-AtlasAnalJobBroker.log
+    -
       document_type: atlasprodjobbroker
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
-      document_type: atlasprodjobbroker
-      input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-AtlasProdJobBroker.log
+    -
       document_type: taskcommando
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-TaskCommando.log
+    -
       document_type: atlasprodjobthrottler
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-AtlasProdJobThrottler.log
+    -
       document_type: jobsplitter
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
-      document_type: atlastasksettuper
+      paths:
+        - /var/log/panda/panda-JobSplitter.log
+    -
+      document_type: atlastasksetupper
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-AtlasTaskSetupper.log
+    -
       document_type: jobgenerator
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-JobGenerator.log
+    -
       document_type: atlasprodwatchdog
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-AtlasProdWatchDog.log
+    -
       document_type: closer
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-Closer.log
+    -
       document_type: taskbroker
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-TaskBroker.log
+    -
       document_type: atlasanalwatchdog
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-AtlasAnalWatchDog.log
+    -
       document_type: contentsfeeder
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-ContentsFeeder.log
+    -
       document_type: stdout
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda_jedi_stdout.log
+    -
       document_type: taskbuffer
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-TaskBuffer.log
+    -
       document_type: atlasddmclient
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-AtlasDDMClient.log
+    -
       document_type: atlasanaljobthrottler
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-AtlasAnalJobThrottler.log
+    -
       document_type: activator
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-Activator.log
+    -
       document_type: dbproxypool
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-DBProxyPool.log
+    -
       document_type: jeditaskbuffer
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-JediTaskBuffer.log
+    -
       document_type: jobthrottler
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-JobThrottler.log
+    -
       document_type: tasksetupper
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-TaskSetupper.log
+    -
       document_type: jobbroker
       input_type: log
-      paths: 
-        - /var/log/panda/
-    - 
+      paths:
+        - /var/log/panda/panda-JobBroker.log
+    -
       document_type: watchdog
       input_type: log
-      paths: 
-        - /var/log/panda/
+      paths:
+        - /var/log/panda/panda-WatchDog.log
   registry_file: /var/lib/filebeat/registry
-logging: 
-  files: 
+logging:
+  files:
     name: filebeat.log
     path: /var/log/filebeat
     rotateeverybytes: 10485760
   level: debug
   to_files: true
   to_syslog: false
-output: 
-  logstash: 
+output:
+  logstash:
     compression_level: 3
-    hosts: 
+    hosts:
       - "aipanda145:5044"
     index: jedilogs
     worker: 1
