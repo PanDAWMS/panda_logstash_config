@@ -124,10 +124,14 @@ filebeat:
       paths:
         - /var/log/panda/panda-JobThrottler.log
     -
-      document_type: tasksetupper
-      input_type: log
       paths:
         - /var/log/panda/panda-TaskSetupper.log
+      document_type: tasksetupper
+      input_type: log
+      multiline:
+        pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+        negate: true
+        match: after              
     -
       paths:
         - /var/log/panda/panda-JobBroker.log
