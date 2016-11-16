@@ -1,6 +1,8 @@
 {
-    "template": "atlas_jedilogs-*",
+    "template": "atlas_jedilogs*",
     "settings" : {
+    "number_of_shards" : 20,
+    "number_of_replicas" : 1,
     "index.refresh_interval" : "60s"
     },
     "mappings": {
