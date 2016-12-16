@@ -1,5 +1,5 @@
 # Installation Curator
-* For installaion enter this command:
+* For installation enter this command:
 ```
 pip install elasticsearch-curator
 ```
@@ -8,7 +8,7 @@ pip install elasticsearch-curator
 pip install -U elasticsearch-curator
 ```
 # Configuration Curator
-* Create a config file with a .yml extension (Default path for the config file /etc/curator/) for connection to ES server. And add the following code:
+* Create a config file with .yml extension (Default path for the config file /etc/curator/) for connection to ES server. And add the following code:
 ```
 client:
   hosts:
