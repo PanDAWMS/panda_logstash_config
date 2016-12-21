@@ -1,4 +1,6 @@
 filebeat:
+  spool_size: 8196
+  publish_async: true
   prospectors:
     -
       #########panda-activator.log#########
@@ -226,7 +228,9 @@ filebeat:
 output:
   logstash:
     hosts: ["aipanda145:5044"]
-    worker: 1
+    worker: 4
+    bulk_max_size : 8192
+    loadbalance: true
     compression_level: 3
     index: pandalogs
 

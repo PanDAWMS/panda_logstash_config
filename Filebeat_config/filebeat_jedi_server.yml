@@ -1,5 +1,7 @@
 ---
 filebeat:
+  spool_size: 8196
+  publish_async: true
   prospectors:
     -
       document_type: atlasprodtaskbroker
@@ -177,4 +179,6 @@ output:
     hosts:
       - "aipanda145:5044"
     index: jedilogs
-    worker: 1
+    bulk_max_size : 8192
+    loadbalance: true
+    worker: 4
