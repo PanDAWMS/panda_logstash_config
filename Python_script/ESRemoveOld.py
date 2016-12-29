@@ -56,13 +56,13 @@ def main(defaultage):
 
     eslogin = cfg.get('server','login')
     espasswd = cfg.get('server','password')
-    url = cfg.get('server','url')
+    url = cfg.get('server','serverurl')
     port = cfg.get('server','port')
-    index = cfg.get('server','index')
+    index = cfg.get('delete','index')
     fullurl =url+":"+port+"/"+index
 
 ##    age = int(sys.argv[1])
-    age = cfg.get('server','age')
+    age = cfg.get('delete','age')
     if representsInt(age) == False:
         age = defaultage
 
@@ -70,6 +70,7 @@ def main(defaultage):
         ind_date = getAllDate(eslogin,espasswd,fullurl)
         old_date = getOldDate(ind_date,age)
         if old_date != 0 or old_date != None:
+            v = 0
             removeOldDate(old_date,eslogin,espasswd,fullurl)
         else:
             print("No date")
