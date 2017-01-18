@@ -20,7 +20,7 @@ def getConnection():
     es = Elasticsearch(
         [host],
         http_auth=(eslogin, espasswd),
-        port=port,
+        port=int(port),
         use_ssl=ssl,
         verify_certs=False
     )
