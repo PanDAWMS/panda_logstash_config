@@ -1,5 +1,6 @@
+import os
 import re
-
+import json
 from elasticsearch import Elasticsearch
 from elasticsearch.client import IndicesClient
 from elasticsearch.client import CatClient
@@ -51,22 +52,34 @@ def getIndexMappingList(connection,index):
     mapList = mapping[index]['mappings']
     return mapList
 
+def writeToFileLists (ls,folder,filename):
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+    with open(folder+'\\'+filename, 'w') as f:
+        for s in ls:
+            f.write(s + '\n')
+
 def main():
     try:
         con = getConnection()
         list,shtlist = getFullListIndicies(con)
-        print('###########################################')
+        print('################HEALTH########################')
         print(con.cluster.health())
-        print ('##########################################')
+        print('##################INDICIES####################')
+        print list
+        folder = cfg.get('statistic','path')
+        #writeToFileLists(list,folder=folder,filename='Stats.txt')
         for index in list:
             print(index)
         print(shtlist)
         for index in shtlist:
-            print('###########################################')
+            print('##############MAPPING#####################')
             print(index)
-            print('###########################################')
             type = getIndexMappingList(con,index)
+            with open(folder+'/'+index+'.txt', "w") as f:
+                json.dump(type, f, indent = 0, ensure_ascii=False)
             print(type)
+            print('###########################################')
     except:
         pass
 if __name__ == '__main__': main()
