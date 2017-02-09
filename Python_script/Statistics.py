@@ -1,6 +1,9 @@
 import os
 import re
 import json
+
+import datetime
+
 from elasticsearch import Elasticsearch
 from elasticsearch.client import IndicesClient
 from elasticsearch.client import CatClient
@@ -26,6 +29,7 @@ def getConnection():
         verify_certs=False
     )
     return es
+
 def getFullListIndicies(connection):
     ids_client = CatClient(connection)
     full_list_of_indicies = []
@@ -45,17 +49,20 @@ def getFullListIndicies(connection):
         date_reg_exp = re.compile(list_ind_star + '-\d{4}[.]\d{2}[.]\d{2}')
         short_list_of_indicies.extend(date_reg_exp.findall(str_list))
     return full_list_of_indicies,short_list_of_indicies
+
 def getIndexMappingList(connection,index):
     mapList = []
     idx_client = IndicesClient(connection)
     mapping = idx_client.get_mapping(index=index, request_timeout=30)
     mapList = mapping[index]['mappings']
     return mapList
+now = datetime.datetime.now()
 
 def writeToFileLists (ls,folder,filename):
+    folder = folder+'/' + now.strftime("%Y-%m-%d")+'/'
     if not os.path.exists(folder):
         os.makedirs(folder)
-    with open(folder+'\\'+filename, 'w') as f:
+    with open(folder+'/'+filename, 'w') as f:
         for s in ls:
             f.write(s + '\n')
 
@@ -68,7 +75,7 @@ def main():
         print('##################INDICIES####################')
         print list
         folder = cfg.get('statistic','path')
-        #writeToFileLists(list,folder=folder,filename='Stats.txt')
+        writeToFileLists(list,folder=folder,filename='Stats.txt')
         for index in list:
             print(index)
         print(shtlist)
@@ -76,7 +83,7 @@ def main():
             print('##############MAPPING#####################')
             print(index)
             type = getIndexMappingList(con,index)
-            with open(folder+'/'+index+'.txt', "w") as f:
+            with open(folder+'/'+now.strftime("%Y-%m-%d")+'/'+index+'.txt', "w") as f:
                 json.dump(type, f, indent = 0, ensure_ascii=False)
             print(type)
             print('###########################################')
