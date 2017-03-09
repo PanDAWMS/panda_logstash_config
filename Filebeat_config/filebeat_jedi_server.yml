@@ -17,11 +17,13 @@ filebeat:
     -
       document_type: atlasanaljobbroker
       input_type: log
+      exclude_lines: ['DEBUG']
       paths:
         - /var/log/panda/panda-AtlasAnalJobBroker.log
     -
       document_type: atlasprodjobbroker
       input_type: log
+      exclude_lines: ['DEBUG']
       paths:
         - /var/log/panda/panda-AtlasProdJobBroker.log
     -
