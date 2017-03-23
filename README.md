@@ -1,4 +1,4 @@
-#Installation Filebeat
+# Installation Filebeat
 
 * Download and install the public signing key: 
 ```
@@ -35,7 +35,7 @@ sudo chkconfig --add filebeat
 service filebeat stop/start/status
 ```
 
-#Installation Logstash
+# Installation Logstash
 * Download and install the public signing key: 
 ```
 sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
