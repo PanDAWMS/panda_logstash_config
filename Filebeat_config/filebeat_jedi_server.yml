@@ -115,6 +115,15 @@ filebeat:
         - /var/log/panda/panda-TaskBuffer.log
     -
       paths:
+        - /var/log/panda/panda-JediDBProxyFiltered.log
+      document_type: jedidbproxyfiltered
+      input_type: log
+      multiline:
+        pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+        negate: true
+        match: after
+    -
+      paths:
         - /var/log/panda/panda-AtlasDDMClient.log
       document_type: atlasddmclient
       input_type: log
