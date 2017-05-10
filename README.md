@@ -21,6 +21,12 @@ type=rpm-md
 ```
 sudo yum install filebeat
 ```
+* If you need to force the specific repository, e.g. in case some other repo is overwriting the versions:
+```
+yum repolist
+yum --disablerepo=* --enablerepo=elastic-5.x install filebeat
+```
+
 !!! If this command does not work - check you /etc/yum.conf file. And (if needed) add string reposdir=/etc/yum.repos.d/  at the end of a file. !!!
 To configure the beat to start automatically during boot, run:
 ```
