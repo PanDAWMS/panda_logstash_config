@@ -1,4 +1,4 @@
-# Installation Filebeat
+# Installation Filebeat 5.4
 
 * Download and install the public signing key: 
 ```
@@ -7,12 +7,14 @@ sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 * Create a file with a .repo extension (for example, beats.repo) in your /etc/yum.repos.d/directory and add the following lines:
 ```
-[beats]
-name=Elastic Beats Repository
-baseurl=https://packages.elastic.co/beats/yum/el/$basearch
-enabled=1
-gpgkey=https://packages.elastic.co/GPG-KEY-elasticsearch
+[elastic-5.x]
+name=Elastic repository for 5.x packages
+baseurl=https://artifacts.elastic.co/packages/5.x/yum
 gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
 ```
 
 * Your repository is ready to use. For example, you can install Filebeat by running:
@@ -35,7 +37,7 @@ sudo chkconfig --add filebeat
 service filebeat stop/start/status
 ```
 
-# Installation Logstash
+# Installation Logstash 5.4
 * Download and install the public signing key: 
 ```
 sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
@@ -43,12 +45,14 @@ sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 * Create a file with a .repo extension (for example logstash.repo) in your /etc/yum.repos.d/directory and add the following lines:
 ```
-[logstash-2.3]
-name=Logstash repository for 2.3.x packages
-baseurl=https://packages.elastic.co/logstash/2.3/centos
+[elastic-5.x]
+name=Elastic repository for 5.x packages
+baseurl=https://artifacts.elastic.co/packages/5.x/yum
 gpgcheck=1
-gpgkey=https://packages.elastic.co/GPG-KEY-elasticsearch
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
+autorefresh=1
+type=rpm-md
 ```
 
 * Your repository is ready to use. For example, you can install Logstash by running:
@@ -64,6 +68,10 @@ sudo yum install logstash
 
 * Manage the logstash daemon
 ```
-service logstash configtest/stop/start/status
-Better not to use: /opt/logstash/bin/logstash -f /etc/logstash/conf.d &
+For start:
+sudo initctl start logstash 
+For stop:
+sudo initctl stop logstash
+For configtest
+/usr/share/logstash/bin/logstash -t -f --path.settings=/etc/logstash/
 ```
