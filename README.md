@@ -78,6 +78,6 @@ For start:
 sudo initctl start logstash 
 For stop:
 sudo initctl stop logstash
-For configtest
-/usr/share/logstash/bin/logstash -t -f --path.settings=/etc/logstash/
+For configtest:
+/usr/share/logstash/bin/logstash -t -f /etc/logstash/conf.d
 ```
