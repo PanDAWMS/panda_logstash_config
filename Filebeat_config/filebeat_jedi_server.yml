@@ -1,7 +1,6 @@
 ---
 filebeat:
   spool_size: 8196
-  publish_async: true
   prospectors:
     -
       document_type: atlasprodtaskbroker
