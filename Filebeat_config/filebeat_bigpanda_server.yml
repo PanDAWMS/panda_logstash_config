@@ -38,7 +38,7 @@ filebeat:
 
 output:
   logstash:
-    hosts: ["aipanda145:5044"]
+    hosts: ["aipanda145:5044", "aipanda160:5044"]
     worker: 4
     bulk_max_size : 8192
     loadbalance: true
