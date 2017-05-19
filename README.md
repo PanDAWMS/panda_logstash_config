@@ -80,4 +80,6 @@ For stop:
 sudo initctl stop logstash
 For configtest:
 /usr/share/logstash/bin/logstash -t -f /etc/logstash/conf.d
+For plugins
+/usr/share/logstash/bin/logstash-plugin install [nameplugin]
 ```
