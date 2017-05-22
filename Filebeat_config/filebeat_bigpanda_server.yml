@@ -33,6 +33,17 @@ filebeat:
         - /var/log
       input_type: log
       document_type: port80_error
+    -
+     #########django.log#########
+      paths:
+        - /var/djangolog
+      input_type: log
+      document_type: djangolog
+      multiline:
+        pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+        negate: true
+        match: after
+    
  
   registry_file: /var/lib/filebeat/registry
 
