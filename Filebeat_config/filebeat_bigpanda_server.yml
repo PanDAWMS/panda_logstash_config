@@ -2,35 +2,23 @@ filebeat:
   spool_size: 8196
   prospectors:
     -
-      #########bigpanda-apache-access_ssl.log#########
-      paths:
-        - /_access_ssl.log
-      input_type: log
-      document_type: access_ssl
-    -
-      #########bigpanda-apache-error_ssl.log#########
-      paths:
-        - /var/log/panda/error_ssl.log
-      input_type: log
-      document_type: error_ssl
-    -
       #########bigpanda-apache-error_log#########    
       paths:
-        - /var/log/error_log
+        - /var/log/httpd/error_log
       input_type: log
       document_type: error_log
     
     -
       #########bigpanda-apache-port80_access.log#########       
       paths:
-        - /var/log/
+        - /var/log/httpd/port80_access.log
       input_type: log
       document_type: port80_access
-   
-   -
+
+    -
       #########bigpanda-apache-port80_error.log#########       
       paths:
-        - /var/log
+        - /var/log/httpd/port80_error.log
       input_type: log
       document_type: port80_error
     -
