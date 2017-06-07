@@ -1,4 +1,5 @@
 TYPE [a-zA-Z0-9._]+
+TYPE2 [a-zA-Z0-9._:]+
 NUMBER [0-9]+
 COMMONLOG \[%{HTTPDATE:timeEvent}\] %{IPORHOST:hostname} "(?:%{WORD:verb} %{NOTSPACE:Function_called}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:Return_code} (?:%{NUMBER:Size}|-)
 TIMESTAMP_AtlasProdJobThrottler %{YEAR}-%{MONTHNUM}-%{MONTHDAY}[T\/]%{HOUR}:?%{MINUTE}(?::?%{SECOND})?%{ISO8601_TIMEZONE}?

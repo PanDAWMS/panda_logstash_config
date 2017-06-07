@@ -2,19 +2,25 @@ filebeat:
   spool_size: 8196
   prospectors:
     -
-      #########bigpanda-apache-error_log#########    
+      #########bigpanda-access_ssl#########
+      paths:
+        - /var/log/httpd/aipanda*.cern.ch_access_ssl.log
+      input_type: log
+      document_type: access_ssl
+    -
+      #########bigpanda-apache-error_log#########
       paths:
         - /var/log/httpd/error_log
       input_type: log
-      document_type: error_log   
+      document_type: error_log
     -
-      #########bigpanda-apache-port80_access.log#########       
+      #########bigpanda-apache-port80_access.log#########
       paths:
         - /var/log/httpd/port80_access.log
       input_type: log
       document_type: port80_access
     -
-      #########bigpanda-apache-port80_error.log#########       
+      #########bigpanda-apache-port80_error.log#########
       paths:
         - /var/log/httpd/port80_error.log
       input_type: log
@@ -29,7 +35,7 @@ filebeat:
         pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
         negate: true
         match: after
-   
+
   registry_file: /var/lib/filebeat/registry
 
 output:
