@@ -98,15 +98,15 @@ filebeat:
         pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
         negate: true
         match: after
-    -
-      paths:
-        - /var/log/panda/panda_jedi_stdout.log
-      document_type: stdout
-      input_type: log
-      multiline:
-        pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
-        negate: true
-        match: after      
+    #-
+    #  paths:
+    #    - /var/log/panda/panda_jedi_stdout.log
+    #  document_type: stdout
+    #  input_type: log
+    #  multiline:
+    #    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    #    negate: true
+    #    match: after
     -
       document_type: taskbuffer
       input_type: log
