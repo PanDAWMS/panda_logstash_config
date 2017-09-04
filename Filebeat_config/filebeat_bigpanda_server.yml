@@ -20,6 +20,12 @@ filebeat:
       input_type: log
       document_type: port80_access
     -
+      #########bigpanda.cern.ch_access_ssl.log#########
+      paths:
+        - /var/log/httpd/bigpanda.cern.ch_access_ssl.log
+      input_type: log
+      document_type: bigpanda_access_ssl      
+    -
       #########bigpanda-apache-port80_error.log#########
       paths:
         - /var/log/httpd/port80_error.log
