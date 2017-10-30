@@ -1,7 +1,7 @@
 {
-    "template": "atlas_jedilogs*",
+    "template": "atlas_bigpanda*",
     "settings" : {
-    "number_of_shards" : 4,
+    "number_of_shards" : 1,
     "number_of_replicas" : 1,
     "index.refresh_interval" : "60s"
     },
@@ -16,13 +16,13 @@
                 "mapping" : { "type" : "string"} 
               } 
             }, { 
-                    "string_template" : { 
-                        "match" : "*",
-                        "mapping" : { "type": "string", "index": "not_analyzed" },
-                        "match_mapping_type" : "string",
-                        "ignore_above" : 1024
-                     } 
-                 }
+                "string_template" : { 
+                    "match" : "*",
+                    "mapping" : { "type": "string", "index": "analyzed" },
+                    "match_mapping_type" : "string",
+                    "ignore_above" : 1024
+                 } 
+                }
              ],
             "properties" : {
           "@timestamp" : {
@@ -40,11 +40,9 @@
               "name" : {
                 "type" : "string"
               },
-              "version":
-              {
-                "type" : "string"
+              "version" : {
+                "type" :"string"
               }
-              
             }
           }
 
