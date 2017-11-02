@@ -1,4 +1,5 @@
 {
+	"order": 1,
     "template": "atlas_jedilogs*",
     "settings" : {
     "number_of_shards" : 4,
@@ -13,39 +14,23 @@
               "message_field" : { 
                 "match" : "message", 
                 "match_mapping_type" : "string", 
-                "mapping" : { "type" : "string"} 
+                "mapping" : { "type" : "text"} 
               } 
             }, { 
-                    "string_template" : { 
-                        "match" : "*",
-                        "mapping" : { "type": "string", "index": "not_analyzed" },
-                        "match_mapping_type" : "string",
-                        "ignore_above" : 1024
-                     } 
-                 }
+            "string_template" : {
+                    "match_mapping_type": "string",
+                    "mapping" : {  
+                      "type": "keyword",
+                      "match_mapping_type" : "string",
+                      "ignore_above" : 1024
+                    }
+                 } 
+            }
              ],
-            "properties" : {
+        "properties" : {
           "@timestamp" : {
             "type" : "date",
             "format" : "strict_date_optional_time||epoch_millis"
-          },
-          "@version" : {
-            "type" : "string"
-          },
-          "beat" : {
-            "properties" : {
-              "hostname" : {
-                "type" : "string"
-              },
-              "name" : {
-                "type" : "string"
-              },
-              "version":
-              {
-                "type" : "string"
-              }
-              
-            }
           }
 
         }
