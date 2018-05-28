@@ -3,7 +3,9 @@ filebeat:
   #spool_size: 8196
   prospectors:
     -
-      document_type: atlasprodtaskbroker
+      #document_type: atlasprodtaskbroker
+      fields:
+        type: atlasprodtaskbroker
       input_type: log
       paths:
         - /var/log/panda/panda-AtlasProdTaskBroker.log
@@ -16,7 +18,7 @@ filebeat:
       paths:
         - /var/log/panda/panda-TaskRefiner.log
     -
-      document_type: atlasanaljobbroker
+      #document_type: atlasanaljobbroker
       fields:
         type: atlasanaljobbroker      
       input_type: log
