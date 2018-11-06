@@ -23,10 +23,10 @@ filebeat:
   registry_file: /var/lib/filebeat/registry
 
 output.logstash:
-  hosts: ["aipanda145", "aipanda160"]
+  hosts: ["aipanda145"]
   worker: 4
   bulk_max_size : 8192
-  loadbalance: true
+  #loadbalance: true
   compression_level: 3
   index: harvesterlogs
 
