@@ -1,0 +1,218 @@
+filebeat:
+  prospectors:
+    -
+      #########panda_harvester_stderr#########
+      paths:
+        - /var/log/harvester/panda_harvester_stderr.log
+      input_type: log
+      fields:
+        type:  harvester_stderr
+      multiline.pattern: '#####START#####'
+      multiline.negate: true
+      multiline.match: after
+      multiline.flush_pattern: '#####END#####'
+      include_lines: ['#####START#####']
+    -
+      #########panda-cacher.log#########
+      paths:
+        - /var/log/harvester/panda-cacher.log
+      input_type: log
+      fields:
+        type: harvester_cacher
+    -
+      #########panda-commandmanager.log#########
+      paths:
+        - /var/log/harvester/panda-command_manager.log
+      input_type: log
+      fields:
+        type: harvester_commandmanager
+    -
+      #########panda-communicator.log#########
+      paths:
+        - /var/log/harvester/panda-communicator.log
+      input_type: log
+      fields:
+        type: harvester_communicator
+    -
+      #########panda-communicator_pool.log#########
+      paths:
+        - /var/log/harvester/panda-communicator_pool.log
+      input_type: log
+      fields:
+        type: harvester_communicatorpool
+    -
+      #########panda-cred_manager.log#########
+      paths:
+        - /var/log/harvester/panda-cred_manager.log
+      input_type: log
+      fields:
+        type: harvester_credmanager
+    -
+      #########panda-db_proxy.log#########
+      paths:
+        - /var/log/harvester/panda-db_proxy.log
+      input_type: log
+      fields:
+        type: harvester_dbproxy
+    -
+      #########panda-db_proxy_pool.log#########
+      paths:
+        - /var/log/harvester/panda-db_proxy_pool.log
+      input_type: log
+      fields:
+        type: harvester_dbproxypool
+    -
+      #########panda-event_feeeder.log#########
+      paths:
+        - /var/log/harvester/panda-event_feeeder.log
+      input_type: log
+      fields:
+        type: harvester_event_feeeder
+    -
+      #########panda-job_fetcher.log#########
+      paths:
+        - /var/log/harvester/panda-job_fetcher.log
+      input_type: log
+      fields:
+        type: harvester_jobfetcher
+    -
+      #########panda-master.log#########
+      paths:
+        - /var/log/harvester/panda-master.log
+      input_type: log
+      fields:
+        type: harvester_master
+      multiline.pattern: '#####START#####'
+      multiline.negate: true
+      multiline.match: after
+      multiline.flush_pattern: '#####END#####'
+      include_lines: ['#####START#####']
+    -
+      #########panda-monitor.log#########
+      paths:
+        - /var/log/harvester/panda-monitor.log
+      input_type: log
+      fields:
+        type: harvester_monitor
+    -
+      #########panda-multijob_workermaker.log#########
+      paths:
+        - /var/log/harvester/panda-multijob_workermaker.log
+      input_type: log
+      fields:
+        type: harvester_multijobworkermaker
+    -
+      #########panda-no_voms_cred_manager.log#########
+      paths:
+        - /var/log/harvester/panda-no_voms_cred_manager.log
+      input_type: log
+      fields:
+        type: harvester_novomscredmanager
+    -
+      #########panda-pilotmover_preparator.log#########
+      paths:
+        - /var/log/harvester/panda-pilotmover_preparator.log
+      input_type: log
+      fields:
+        type: harvester_pilotmoverpreparator
+    -
+      #########panda-plugin_factory.log#########
+      paths:
+        - /var/log/harvester/panda-plugin_factory.log
+      input_type: log
+      fields:
+        type: harvester_pluginfactory
+    -
+      #########panda-preparator.log#########
+      paths:
+        - /var/log/harvester/panda-preparator.log
+      input_type: log
+      fields:
+        type: harvester_preparator
+    -
+      #########panda-propagator.log#########
+      paths:
+        - /var/log/harvester/panda-propagator.log
+      input_type: log
+      fields:
+        type: harvester_propagator
+    -
+      #########panda-queue_config_mapper.log#########
+      paths:
+        - /var/log/harvester/panda-queue_config_mapper.log
+      input_type: log
+      fields:
+        type: harvester_queueconfigmapper
+    -
+      #########panda-rucio_stager_hpc.log#########
+      paths:
+        - /var/log/harvester/panda-rucio_stager_hpc.log
+      input_type: log
+      fields:
+        type: harvester_ruciostagerhpc
+      #multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      #multiline.negate: true
+      #multiline.match: after
+    -
+      #########panda-saga_monitor.log#########
+      paths:
+        - /var/log/harvester/panda-saga_monitor.log
+      input_type: log
+      fields:
+        type: harvester_sagamonitor
+    -
+      #########panda-saga_monitor.log#########
+      paths:
+        - /var/log/harvester/panda-saga_monitor.log
+      input_type: log
+      fields:
+        type: harvester_sagamonitor
+    -
+      #########panda-saga_submitter.log#########
+      paths:
+        - /var/log/harvester/panda-saga_submitter.log
+      input_type: log
+      fields:
+        type: harvester_sagasubmitter
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after
+    -
+      #########panda-saga_sweeper.log#########
+      paths:
+        - /var/log/harvester/panda-saga_sweeper.log
+      input_type: log
+      fields:
+        type: harvester_sagasubmitter
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after
+    -
+      #########panda-submitter.log#########
+      paths:
+        - /var/log/harvester/panda-submitter.log
+      input_type: log
+      fields:
+        type: panda_submitter
+
+  registry_file: /var/lib/filebeat/registry
+
+output.logstash:
+  hosts: ["aipanda145"]
+  worker: 4
+  bulk_max_size : 8192
+  #loadbalance: true
+  compression_level: 3
+  index: harvesterlogs
+
+logging:
+  level: debug
+
+  to_files: true
+
+  to_syslog: false
+
+  files:
+    path: /var/log/filebeat
+    name: filebeat.log
+    rotateeverybytes: 10485760 # = 10MB
