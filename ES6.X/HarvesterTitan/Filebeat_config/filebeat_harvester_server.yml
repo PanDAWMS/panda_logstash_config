@@ -47,6 +47,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_credmanager
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after  
     -
       #########panda-db_proxy.log#########
       paths:
@@ -67,7 +70,7 @@ filebeat:
         - /var/log/harvester/panda-event_feeder.log
       input_type: log
       fields:
-        type: harvester_event_feeder
+        type: harvester_eventfeeder
     -
       #########panda-job_fetcher.log#########
       paths:
@@ -75,6 +78,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_jobfetcher
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after
     -
       #########panda-master.log#########
       paths:
@@ -166,13 +172,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_sagamonitor
-    -
-      #########panda-saga_monitor.log#########
-      paths:
-        - /var/log/harvester/panda-saga_monitor.log
-      input_type: log
-      fields:
-        type: harvester_sagamonitor
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after     
     -
       #########panda-saga_submitter.log#########
       paths:
@@ -231,6 +233,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_watcher
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after  
     -
       #########panda-worker_adjuster.log#########
       paths:
@@ -249,7 +254,9 @@ filebeat:
   registry_file: /var/lib/filebeat/registry
 
 output.logstash:
-  hosts: ["aipanda145"]
+  hosts: [""]
+  ssl.enabled: true
+  ssl.certificate_authorities: "logstash.crt"
   worker: 4
   bulk_max_size : 8192
   #loadbalance: true
