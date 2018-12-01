@@ -19,6 +19,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_cacher
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-commandmanager.log#########
       paths:
@@ -26,6 +29,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_commandmanager
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-communicator.log#########
       paths:
@@ -33,6 +39,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_communicator
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-communicator_pool.log#########
       paths:
@@ -40,6 +49,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_communicatorpool
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-cred_manager.log#########
       paths:
@@ -57,6 +69,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_dbproxy
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-db_proxy_pool.log#########
       paths:
@@ -64,6 +79,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_dbproxypool
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-event_feeder.log#########
       paths:
@@ -71,6 +89,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_eventfeeder
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-job_fetcher.log#########
       paths:
@@ -100,6 +121,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_monitor
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-multijob_workermaker.log#########
       paths:
@@ -127,6 +151,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_pilotmoverpreparator
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-plugin_factory.log#########
       paths:
@@ -134,6 +161,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_pluginfactory
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-preparator.log#########
       paths:
@@ -141,6 +171,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_preparator
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-propagator.log#########
       paths:
@@ -148,6 +181,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_propagator
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-queue_config_mapper.log#########
       paths:
@@ -155,6 +191,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_queueconfigmapper
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-rucio_stager_hpc.log#########
       paths:
@@ -212,6 +251,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_stager
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-submitter.log#########
       paths:
@@ -219,6 +261,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_submitter
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-sweeper.log#########
       paths:
@@ -226,6 +271,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_sweeper
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after         
     -
       #########panda-watcher.log#########
       paths:
@@ -243,6 +291,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_workeradjuster
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after    
     -
       #########panda-worker_maker.log#########
       paths:
@@ -250,6 +301,9 @@ filebeat:
       input_type: log
       fields:
         type: harvester_workermaker
+      multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      multiline.negate: true
+      multiline.match: after 
         
   registry_file: /var/lib/filebeat/registry
 
