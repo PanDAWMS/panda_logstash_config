@@ -255,7 +255,7 @@ logging:
 output:
   logstash:
     compression_level: 3
-    hosts: ["aipanda145:5044", "aipanda160:5044", ]
+    hosts: ["aipanda012:5044", "aipanda019:5044", ]
     index: jedilogs
     bulk_max_size : 8192
     loadbalance: true
