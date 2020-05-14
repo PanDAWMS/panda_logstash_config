@@ -1,0 +1,226 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  fields:
+    type: atlasprodtaskbroker
+  paths:
+    - /var/log/panda/panda-AtlasProdTaskBroker.log
+- type: log
+  enabled: true
+  fields:
+    type: taskrefiner
+  exclude_lines: ['DEBUG']
+  paths:
+    - /var/log/panda/panda-TaskRefiner.log
+- type: log
+  enabled: true
+  exclude_lines: ['DEBUG']
+  fields:
+    type: atlasanaljobbroker
+  paths:
+    - /var/log/panda/panda-AtlasAnalJobBroker.log
+- type: log
+  enabled: true
+  exclude_lines: ['DEBUG']
+  fields:
+    type: atlasprodjobbroker
+  paths:
+    - /var/log/panda/panda-AtlasProdJobBroker.log
+- type: log
+  enabled: true
+  fields:
+    type: taskcommando
+  exclude_lines: ['DEBUG']
+  paths:
+    - /var/log/panda/panda-TaskCommando.log
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: atlasprodjobthrottler
+  exclude_lines: ['DEBUG']
+  paths:
+    - /var/log/panda/panda-AtlasProdJobThrottler.log
+- type: log
+  enabled: true
+  fields:
+    type: jobsplitter
+  paths:
+    - /var/log/panda/panda-JobSplitter.log
+- type: log
+  enabled: true
+  fields:
+    type: atlastasksetupper
+  paths:
+    - /var/log/panda/panda-AtlasTaskSetupper.log
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: jobgenerator
+  paths:
+    - /var/log/panda/panda-JobGenerator.log
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: atlasprodwatchdog
+  paths:
+    - /var/log/panda/panda-AtlasProdWatchDog.log
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: postprocessor
+  paths:
+    - /var/log/panda/panda-PostProcessor.log
+  exclude_lines: ['DEBUG']
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: closer
+  paths:
+    - /var/log/panda/panda-Closer.log
+- type: log
+  enabled: true
+  fields:
+    type: taskbroker
+  paths:
+    - /var/log/panda/panda-TaskBroker.log
+- type: log
+  enabled: true
+  fields:
+    type: atlasanalwatchdog
+  paths:
+    - /var/log/panda/panda-AtlasAnalWatchDog.log
+- type: log
+  enabled: true
+  fields:
+    type: contentsfeeder
+  paths:
+    - /var/log/panda/panda-ContentsFeeder.log
+  exclude_lines: ['DEBUG']
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: taskbuffer
+  paths:
+    - /var/log/panda/panda-TaskBuffer.log
+- type: log
+  enabled: true
+  fields:
+    type: jedidbproxyfiltered
+  paths:
+    - /var/log/panda/panda-JediDBProxyFiltered.log
+  input_type: log
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: atlasddmclient
+  paths:
+    - /var/log/panda/panda-AtlasDDMClient.log
+  exclude_lines: ['DEBUG']
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: atlasanaljobthrottler
+  input_type: log
+  exclude_lines: ['DEBUG']
+  paths:
+    - /var/log/panda/panda-AtlasAnalJobThrottler.log
+- type: log
+  enabled: true
+  fields:
+    type: activator
+  paths:
+    - /var/log/panda/panda-Activator.log
+- type: log
+  enabled: true
+  fields:
+    type: dbproxypool
+  paths:
+    - /var/log/panda/panda-DBProxyPool.log
+- type: log
+  enabled: true
+  fields:
+    type: jeditaskbuffer
+  paths:
+    - /var/log/panda/panda-JediTaskBuffer.log
+- type: log
+  enabled: true
+  fields:
+    type: jobthrottler
+  exclude_lines: ['DEBUG']
+  paths:
+    - /var/log/panda/panda-JobThrottler.log
+- type: log
+  enabled: true
+  fields:
+    type: tasksetupper
+  paths:
+    - /var/log/panda/panda-TaskSetupper.log
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: jobbroker
+  paths:
+    - /var/log/panda/panda-JobBroker.log
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: watchdog
+  paths:
+    - /var/log/panda/panda-WatchDog.log
+registry_file: /var/lib/filebeat/registry
+logging:
+  files:
+    name: filebeat.log
+    path: /var/log/filebeat
+    rotateeverybytes: 10485760
+  level: debug
+  to_files: true
+  to_syslog: false
+output:
+  logstash:
+    compression_level: 3
+    hosts: ["aipanda012:5044", "aipanda019:5044", ]
+    index: jedilogs
+    bulk_max_size : 8192
+    loadbalance: true
+    worker: 4
