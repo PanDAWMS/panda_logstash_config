@@ -207,7 +207,6 @@ filebeat.inputs:
     type: watchdog
   paths:
     - /var/log/panda/panda-WatchDog.log
-registry_file: /var/lib/filebeat/registry
 logging:
   files:
     name: filebeat.log
