@@ -146,13 +146,6 @@ filebeat.inputs:
     type: finisher
   paths:
     - /var/log/panda/panda-Finisher.log
-#########panda-Finisher.log#########
-- type: log
-  enabled: true
-  fields:
-    type: finisher
-  paths:
-    - /var/log/panda/panda-Finisher.log
 #########panda-Initializer.log#########
 - type: log
   enabled: true
