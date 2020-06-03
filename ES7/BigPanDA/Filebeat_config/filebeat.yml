@@ -1,0 +1,63 @@
+filebeat.inputs:
+#########bigpanda-access_ssl#########
+- type: log
+  enabled: true
+  fields:
+    type: access_ssl
+  paths:
+    - /var/log/httpd/aipanda*.cern.ch_access_ssl.log
+ #########bigpanda-apache-error_log#########
+- type: log
+  enabled: true
+  fields:
+    type: error_log
+  paths:
+    - /var/log/httpd/error_log
+#########bigpanda-apache-port80_access.log#########
+- type: log
+  enabled: true
+  fields:
+    type: port80_access
+  paths:
+    - /var/log/httpd/port80_access.log
+#########bigpanda.cern.ch_access_ssl.log#########
+- type: log
+  enabled: true
+  fields:
+    type: bigpanda_access_ssl
+  paths:
+    - /var/log/httpd/bigpanda.cern.ch_access_ssl.log
+#########bigpanda-apache-port80_error.log#########
+- type: log
+  enabled: true
+  fields:
+    type: port80_error
+  paths:
+    - /var/log/httpd/port80_error.log
+#########django.error_log#########
+- type: log
+  enabled: true
+  fields:
+    type: djangolog
+  paths:
+    - /data/wenaus/bigpandamon_virtualhosts/twrpm/logs/logfile.error
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+output:
+  logstash:
+    hosts: ["aipanda012:5044"]
+    worker: 4
+    bulk_max_size : 8192
+    #loadbalance: true
+    compression_level: 3
+    index: bigpandalogs
+logging:
+  level: debug
+  to_files: true
+  to_syslog: false
+  files:
+    path: /var/log/filebeat
+    name: filebeat.log
+    rotateeverybytes: 10485760 # = 10MB
