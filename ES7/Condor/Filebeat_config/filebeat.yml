@@ -1,0 +1,27 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  fields:
+    type: condor
+  paths:
+    - /data2/atlpan/condor_logs/*/grid.*.out
+  multiline:
+    pattern: '---- (.*?) ----'
+    negate: true
+    match: after
+output:
+  logstash:
+    hosts: ["aipanda012:5044", "aipanda019:5044", ]
+    worker: 4
+    bulk_max_size : 8192
+    loadbalance: true
+    compression_level: 3
+    index: condorlogs
+logging:
+  level: debug
+  to_files: true
+  to_syslog: false
+  files:
+    path: /var/log/filebeat
+    name: filebeat.log
+    rotateeverybytes: 10485760
