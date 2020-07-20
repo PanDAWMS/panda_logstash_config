@@ -1,4 +1,4 @@
-# Installation Filebeat 5.4
+# Installation Filebeat 7
 
 * Download and install the public signing key: 
 ```
@@ -7,9 +7,9 @@ sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 * Create a file with a .repo extension (for example, beats.repo) in your /etc/yum.repos.d/directory and add the following lines:
 ```
-[elastic-5.x]
-name=Elastic repository for 5.x packages
-baseurl=https://artifacts.elastic.co/packages/5.x/yum
+[elastic-7.x]
+name=Elastic repository for 7.x packages
+baseurl=https://artifacts.elastic.co/packages/7.x/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
@@ -24,7 +24,7 @@ sudo yum install filebeat
 * If you need to force the specific repository, e.g. in case some other repo is overwriting the versions:
 ```
 yum repolist
-yum --disablerepo=* --enablerepo=elastic-5.x install filebeat
+yum --disablerepo=* --enablerepo=elastic-7.x install filebeat
 ```
 
 !!! If this command does not work - check you /etc/yum.conf file. And (if needed) add string reposdir=/etc/yum.repos.d/  at the end of a file. !!!
@@ -43,7 +43,7 @@ sudo chkconfig --add filebeat
 service filebeat stop/start/status
 ```
 
-# Installation Logstash 5.4
+# Installation Logstash 7
 * Download and install the public signing key: 
 ```
 sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
@@ -51,9 +51,9 @@ sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 * Create a file with a .repo extension (for example logstash.repo) in your /etc/yum.repos.d/directory and add the following lines:
 ```
-[elastic-5.x]
-name=Elastic repository for 5.x packages
-baseurl=https://artifacts.elastic.co/packages/5.x/yum
+[elastic-7.x]
+name=Elastic repository for 7.x packages
+baseurl=https://artifacts.elastic.co/packages/7.x/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
