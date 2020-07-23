@@ -1,12 +1,11 @@
 ### THIS FILE IS MANAGED BY PUPPET ###
 filebeat.inputs:
-- type: log # for condorlogs
+- type: log 
   enabled: true
   fields:
     type: condor
   paths:
     - /data1/atlpan/condor_logs/*/grid.*.out
-    - /data/atlpan/condor_logs/*/grid.*.out
   multiline:
     pattern: '---- (.*?) ----'
     negate: true
@@ -24,6 +23,6 @@ logging:
   to_files: true
   to_syslog: false
   files:
-    path: /var/log/filebeat
+    path: /tmp/log/filebeat
     name: filebeat.log
     rotateeverybytes: 10485760
