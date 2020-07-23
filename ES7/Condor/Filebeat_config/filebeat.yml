@@ -5,7 +5,7 @@ filebeat.inputs:
   fields:
     type: condor
   paths:
-    - /data1/atlpan/condor_logs/*/grid.*.out
+    - /data2/atlpan/condor_logs/*/grid.*.out
   multiline:
     pattern: '---- (.*?) ----'
     negate: true
