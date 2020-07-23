@@ -1,5 +1,5 @@
 filebeat.inputs:
-- type: log
+- type: log # for condorlogs
   enabled: true
   fields:
     type: condor
