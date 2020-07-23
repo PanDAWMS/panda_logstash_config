@@ -1,4 +1,4 @@
-###This file is managed by puppet ###
+### THIS FILE IS MANAGED BY PUPPET ###
 filebeat.inputs:
 - type: log # for condorlogs
   enabled: true
