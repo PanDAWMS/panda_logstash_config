@@ -1,0 +1,48 @@
+filebeat.inputs:
+- type: log 
+  enabled: true
+  fields:
+    type: httpd_access
+  paths:
+    - /var/log/idds/httpd_access_log
+- type: log
+  enabled: true
+  fields:
+    type: httpd_error
+  paths:
+    - /var/log/idds/httpd_error_log
+- type: log
+  enabled: true
+  fields:
+    type: stderr
+  paths:
+    - /var/log/idds/idds-server-stderr.log
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+- type: log
+  enabled: true
+  fields:
+    type: stdout
+  paths:
+    - /var/log/idds/idds-server-stdout.log
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+output.logstash:
+  hosts: ["aipanda013:5044"]
+  worker: 4
+  bulk_max_size : 8192
+  compression_level: 3
+  index: iddslogs
+logging.level: debug
+logging.to_files: true
+logging.to_syslog: false
+logging.files:
+  path: /var/log/filebeat
+  name: filebeat.log
+  keepfiles: 7
+  permissions: 0644
+  rotateeverybytes: 10485760
