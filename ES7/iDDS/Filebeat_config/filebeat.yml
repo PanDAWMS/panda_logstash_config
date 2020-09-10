@@ -18,7 +18,7 @@ filebeat.inputs:
   paths:
     - /var/log/idds/idds-server-stderr.log
   multiline:
-    pattern: 'Exception in thread Carrier'
+    pattern: 'Traceback (most recent call last)'
     negate: true
     match: after
 - type: log
@@ -28,7 +28,7 @@ filebeat.inputs:
   paths:
     - /var/log/idds/idds-server-stdout.log
   multiline:
-    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    pattern: 'Traceback (most recent call last)'
     negate: true
     match: after
 output.logstash:
