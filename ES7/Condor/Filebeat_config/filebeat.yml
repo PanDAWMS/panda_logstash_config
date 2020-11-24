@@ -12,10 +12,10 @@ filebeat.inputs:
   ignore_older: 2h
 output.logstash:
   hosts: ["aipanda012:5044", "aipanda019:5044"]
-  worker: 4
+  worker: 10
   bulk_max_size : 8192
   loadbalance: true
-  compression_level: 3
+  compression_level: 0
   index: condorlogs
 logging.level: debug
 logging.to_files: true
