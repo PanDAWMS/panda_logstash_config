@@ -28,7 +28,7 @@ filebeat.inputs:
   paths:
     - /var/log/idds/idds-server-stdout.log
   multiline:
-    pattern: 'Traceback (most recent call last)'
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
     negate: true
     match: after
 output.logstash:
