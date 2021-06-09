@@ -85,3 +85,6 @@ For plugins:
 For rubydebug plugin:
 /usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/[nameconfigfile] --debug --verbose
 ```
+```
+
+```
