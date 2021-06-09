@@ -253,6 +253,20 @@ filebeat.inputs:
     match: after
   paths:
     - /var/log/panda/panda.add
+
+#########panda-recover_lost_files#########
+- type: log
+  enabled: true
+  exclude_lines: ['DEBUG']
+  fields:
+    type: recoverlostfiles
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
+  paths:
+    - /var/log/panda/panda-recover_lost_files.log
+
 #########panda-proxyCache.log#########
 - type: log
   enabled: true
