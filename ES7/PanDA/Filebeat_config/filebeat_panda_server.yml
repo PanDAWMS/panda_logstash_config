@@ -272,10 +272,6 @@ filebeat.inputs:
   enabled: true
   fields:
     type: proxycache
-  multiline:
-    pattern: '^start at'
-    negate: true
-    match: after
   paths:
     - /var/log/panda/panda-ProxyCache.log
 output:
