@@ -277,7 +277,7 @@ filebeat.inputs:
     negate: true
     match: after
   paths:
-    - /var/log/panda/panda-proxyCache.log
+    - /var/log/panda/panda-ProxyCache.log
 output:
   logstash:
     hosts: ["aipanda012:5044", "aipanda019:5044", ]
