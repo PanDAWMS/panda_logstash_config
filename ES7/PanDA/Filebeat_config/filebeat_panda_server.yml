@@ -267,7 +267,7 @@ filebeat.inputs:
   paths:
     - /var/log/panda/panda-recover_lost_files.log
 
-#########panda-proxyCache.log#########
+#########panda-ProxyCache.log#########
 - type: log
   enabled: true
   fields:
