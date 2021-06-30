@@ -1,10 +1,11 @@
 filebeat.inputs:
 - type: log 
-  enabled: true
+  enabled: false
   fields:
     type: condor
   paths:
-    - /data2/atlpan/condor_logs/*/grid.*.out
+#    - /data2/atlpan/condor_logs/*/grid.*.out
+     - /data2/atlpan/condor_logs/disabled
   multiline:
     pattern: '---- (.*?) ----'
     negate: true
