@@ -40,7 +40,7 @@ filebeat.inputs:
   fields:
     type: djangolog
   paths:
-    - /data/wenaus/bigpandamon_virtualhosts/twrpm/logs/logfile.error
+    - /opt/prod/logs/logfile.error
   multiline:
     pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
     negate: true
