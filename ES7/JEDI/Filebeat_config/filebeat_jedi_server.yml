@@ -217,19 +217,19 @@ filebeat.inputs:
     pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
     negate: true
     match: after
-logging:
-  files:
-    name: filebeat.log
-    path: /var/log/filebeat
-    rotateeverybytes: 10485760
-  level: debug
-  to_files: true
-  to_syslog: false
-output:
-  logstash:
-    compression_level: 3
-    hosts: ["aipanda012:5044", "aipanda019:5044", ]
-    index: jedilogs
-    bulk_max_size : 8192
-    loadbalance: true
-    worker: 4
+output.logstash:
+  compression_level: 3
+  hosts: ["aipanda012:5044", "aipanda019:5044", ]
+  index: jedilogs
+  bulk_max_size : 8192
+  loadbalance: true
+  worker: 4
+logging.level: debug
+logging.to_files: true
+logging.to_syslog: false
+logging.files:
+  path: /var/log/filebeat
+  name: filebeat.log
+  keepfiles: 7
+  permissions: 0644
+  rotateeverybytes: 10485760
