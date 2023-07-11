@@ -17,7 +17,7 @@ output.logstash:
   loadbalance: true
   compression_level: 0
   index: condorlogs
-logging.level: debug
+logging.level: info
 logging.to_files: true
 logging.to_syslog: false
 logging.files:

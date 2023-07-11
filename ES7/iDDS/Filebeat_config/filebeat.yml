@@ -37,7 +37,7 @@ output.logstash:
   bulk_max_size : 8192
   compression_level: 3
   index: iddslogs
-logging.level: debug
+logging.level: info
 logging.to_files: true
 logging.to_syslog: false
 logging.files:

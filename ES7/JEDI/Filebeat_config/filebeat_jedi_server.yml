@@ -224,7 +224,7 @@ output.logstash:
   bulk_max_size : 8192
   loadbalance: true
   worker: 4
-logging.level: debug
+logging.level: info
 logging.to_files: true
 logging.to_syslog: false
 logging.files:
