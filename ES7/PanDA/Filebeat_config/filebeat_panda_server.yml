@@ -275,7 +275,7 @@ filebeat.inputs:
   paths:
     - /var/log/panda/panda-ProxyCache.log
 output.logstash:
-  hosts: ["aipanda012:5044", "aipanda019:5044", ]
+  hosts: ["aipanda111:5044", "aipanda019:5044", ]
   worker: 4
   bulk_max_size : 8192
   loadbalance: true
