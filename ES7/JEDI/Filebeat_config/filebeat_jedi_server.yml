@@ -219,7 +219,7 @@ filebeat.inputs:
     match: after
 output.logstash:
   compression_level: 3
-  hosts: ["aipanda111:5044", "aipanda019:5044", ]
+  hosts: ["aipanda111:5044", "aipanda112:5044", ]
   index: jedilogs
   bulk_max_size : 8192
   loadbalance: true
