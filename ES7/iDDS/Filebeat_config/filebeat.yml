@@ -32,7 +32,7 @@ filebeat.inputs:
     negate: true
     match: after
 output.logstash:
-  hosts: ["aipanda013:5044"]
+  hosts: ["aipanda113:5044"]
   worker: 4
   bulk_max_size : 8192
   compression_level: 3
