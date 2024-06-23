@@ -7,10 +7,11 @@ filebeat.inputs:
     - /var/log/prodtasklog/json/logfile.prodtask_ELK
   json.keys_under_root: true
   json.add_error_key: true
+  max_bytes: 10485760 #10 mb
 output.logstash:
   hosts: ["aipanda114:5044"]
   worker: 4
-  bulk_max_size : 8192
+  bulk_max_size : 1024
   loadbalance: true
   compression_level: 3
   index: prodsyslogs
