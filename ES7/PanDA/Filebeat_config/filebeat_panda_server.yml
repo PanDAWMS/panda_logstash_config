@@ -5,7 +5,7 @@ filebeat.inputs:
   fields:
     type: activatorlog
   paths:
-    - /var/log/panda/panda-Activator.log
+    - /var/log/panda/panda-activator.log
 #########panda_server_access#########
 - type: log
   enabled: true
@@ -86,7 +86,7 @@ filebeat.inputs:
     type: closer
   exclude_lines: ['DEBUG']
   paths:
-    - /var/log/panda/panda-Closer.log
+    - /var/log/panda/panda-closer.log
 #########panda-ConBridge.log#########
 - type: log
   enabled: true
@@ -145,7 +145,7 @@ filebeat.inputs:
   fields:
     type: finisher
   paths:
-    - /var/log/panda/panda-Finisher.log
+    - /var/log/panda/panda-finisher.log
 #########panda-Initializer.log#########
 - type: log
   enabled: true
@@ -206,7 +206,7 @@ filebeat.inputs:
     negate: true
     match: after
   paths:
-    - /var/log/panda/panda-Setupper.log
+    - /var/log/panda/panda-setupper.log
 ########panda-DBProxyFiltered.log######
 - type: log
   enabled: true

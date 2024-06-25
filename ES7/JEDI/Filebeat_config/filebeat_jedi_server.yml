@@ -161,7 +161,7 @@ filebeat.inputs:
   fields:
     type: activator
   paths:
-    - /var/log/panda/panda-Activator.log
+    - /var/log/panda/panda-activator.log
 - type: log
   enabled: true
   fields:
