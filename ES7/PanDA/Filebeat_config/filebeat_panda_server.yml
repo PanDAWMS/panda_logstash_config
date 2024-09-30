@@ -71,14 +71,14 @@ filebeat.inputs:
     type: addprocess
   paths:
     - /var/log/panda/panda-add_process.log.log
-#########panda-Adder.log#########
+#########panda-adder.log#########
 - type: log
   enabled: true
   fields:
     type: adder
   exclude_lines: ['DEBUG']
   paths:
-    - /var/log/panda/panda-Adder.log
+    - /var/log/panda/panda-adder.log
 #########panda-Closer.log#########
 - type: log
   enabled: true
@@ -195,7 +195,7 @@ filebeat.inputs:
     match: after
   paths:
     - /var/log/panda/panda-RetrialModule.log
-#########panda-Setupper.log#########
+#########panda-setupper.log#########
 - type: log
   enabled: true
   fields:
