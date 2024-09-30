@@ -86,7 +86,7 @@ filebeat:
     -
       #########panda-Ad2017-02-06 02:32:05,862 panda.log.Setupper: DEBUG    2017-02-06/02:32:05.860162 MemCheck PID=13837 Name=python VSZ=483220kB RSS=27960kBder.log#########
       paths:
-        - /var/log/panda/panda-Adder.log
+        - /var/log/panda/panda-adder.log
       input_type: log
       #document_type: adder
       fields:
@@ -241,7 +241,7 @@ filebeat:
     -
      #########panda-Setupper.log#########
       paths:
-        - /var/log/panda/panda-Setupper.log
+        - /var/log/panda/panda-setupper.log
       input_type: log
       #document_type: setupper
       fields:
