@@ -274,6 +274,15 @@ filebeat.inputs:
     type: proxycache
   paths:
     - /var/log/panda/panda-ProxyCache.log
+
+#########panda-api_data_carousel.log #########
+- type: log
+  enabled: true
+  fields:
+    type: pandaapidc
+  paths:
+    - /var/log/panda/panda-api_data_carousel.log
+
 output.logstash:
   hosts: ["aipanda111:5044", "aipanda112:5044", ]
   worker: 4
