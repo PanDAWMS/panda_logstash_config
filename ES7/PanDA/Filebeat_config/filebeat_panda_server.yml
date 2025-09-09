@@ -1,47 +1,47 @@
 filebeat.inputs:
-#########panda-activator.log#########
+######### panda-activator.log #########
 - type: log
   enabled: true
   fields:
     type: activatorlog
   paths:
     - /var/log/panda/panda-activator.log
-#########panda_server_access#########
+######### panda_server_access #########
 - type: log
   enabled: true
   fields:
     type: serveraccess
   paths:
     - /var/log/panda/panda_server_access_log
-#########panda_server_error#########
+######### panda_server_error #########
 - type: log
   enabled: true
   fields:
     type: servererror
   paths:
     - /var/log/panda/panda_server_error_log
-#########panda-broker.log#########
+######### panda-broker.log #########
 - type: log
   enabled: true
   fields:
     type: brokerlog
   paths:
     - /var/log/panda/panda-broker.log
-#########panda_Utils.log#########
+######### panda_Utils.log #########
 - type: log
   enabled: true
   fields:
     type: utils
   paths:
     - /var/log/panda/panda-Utils.log
-#########panda-broker_util.log#########
+######### panda-broker_util.log #########
 - type: log
   enabled: true
   fields:
     type: brokerutil
   paths:
     - /var/log/panda/panda-broker_util.log
-#########panda-UserIF.log#########
+######### panda-UserIF.log #########
 - type: log
   enabled: true
   fields:
@@ -49,7 +49,7 @@ filebeat.inputs:
   exclude_lines: ['DEBUG']
   paths:
     - /var/log/panda/panda-UserIF.log
-#########panda-Watcher.log#########
+######### panda-Watcher.log #########
 - type: log
   enabled: true
   fields:
@@ -57,21 +57,21 @@ filebeat.inputs:
   exclude_lines: ['DEBUG']
   paths:
     - /var/log/panda/panda-Watcher.log
-#########panda-PilotRequests.log#########
+######### panda-PilotRequests.log #########
 - type: log
   enabled: true
   fields:
     type: pilotrequest
   paths:
     - /var/log/panda/panda-PilotRequests.log
-#########panda-AddProcess.log#########
+######### panda-AddProcess.log #########
 - type: log
   enabled: true
   fields:
     type: addprocess
   paths:
     - /var/log/panda/panda-add_process.log.log
-#########panda-adder.log#########
+######### panda-adder.log #########
 - type: log
   enabled: true
   fields:
@@ -79,7 +79,7 @@ filebeat.inputs:
   exclude_lines: ['DEBUG']
   paths:
     - /var/log/panda/panda-adder.log
-#########panda-Closer.log#########
+######### panda-Closer.log #########
 - type: log
   enabled: true
   fields:
@@ -87,21 +87,21 @@ filebeat.inputs:
   exclude_lines: ['DEBUG']
   paths:
     - /var/log/panda/panda-closer.log
-#########panda-ConBridge.log#########
+######### panda-ConBridge.log #########
 - type: log
   enabled: true
   fields:
     type: conbridge
   paths:
     - /var/log/panda/panda-ConBridge.log
-#########panda-RunRebro.log#########
+######### panda-RunRebro.log #########
 - type: log
   enabled: true
   fields:
     type: runrebro
   paths:
     - /var/log/panda/panda-runRebro.log
-#########panda-Configurator_DBIF.log#########
+######### panda-Configurator_DBIF.log #########
 - type: log
   enabled: true
   exclude_lines: ['DEBUG']
@@ -109,14 +109,14 @@ filebeat.inputs:
     type: configuratordbif
   paths:
     - /var/log/panda/panda-Configurator_DBIF.log
-#########panda-CopyArchive.log#########
+######### panda-CopyArchive.log #########
 - type: log
   enabled: true
   fields:
     type: copyarchive
   paths:
     - /var/log/panda/panda-copyArchive.log
-#########panda-DatasetManager.log#########
+######### panda-DatasetManager.log #########
 - type: log
   enabled: true
   fields:
@@ -124,7 +124,7 @@ filebeat.inputs:
   exclude_lines: ['DEBUG']
   paths:
     - /var/log/panda/panda-datasetManager.log
-#########panda-DBproxypool.log#########
+######### panda-DBproxypool.log #########
 - type: log
   enabled: true
   exclude_lines: ['DEBUG']
@@ -132,49 +132,49 @@ filebeat.inputs:
     type: dbproxypool
   paths:
     - /var/log/panda/panda-DBProxyPool.log
-#########panda-DynDataDistributor.log#########
+######### panda-DynDataDistributor.log #########
 - type: log
   enabled: true
   fields:
     type: dyndatadistributor
   paths:
     - /var/log/panda/panda-DynDataDistributer.log
-#########panda-Finisher.log#########
+######### panda-Finisher.log #########
 - type: log
   enabled: true
   fields:
     type: finisher
   paths:
     - /var/log/panda/panda-finisher.log
-#########panda-Initializer.log#########
+######### panda-Initializer.log #########
 - type: log
   enabled: true
   fields:
     type: initialize
   paths:
     - /var/log/panda/panda-Initializer.log
-#########panda-Notifier.log#########
+######### panda-Notifier.log #########
 - type: log
   enabled: true
   fields:
     type: notifier
   paths:
     - /var/log/panda/panda-Notifier.log
-#########panda-PrioryMassage.log#########
+######### panda-PrioryMassage.log #########
 - type: log
   enabled: true
   fields:
     type: priorymassage
   paths:
     - /var/log/panda/panda-prioryMassage.log
-#########panda-ProcessLimiter.log#########
+######### panda-ProcessLimiter.log #########
 - type: log
   enabled: true
   fields:
     type: processlimiter
   paths:
     - /var/log/panda/panda-ProcessLimiter.log
-#########panda-TaskBuffer.log#########
+######### panda-TaskBuffer.log #########
 - type: log
   enabled: true
   exclude_lines: ['DEBUG']
@@ -182,8 +182,34 @@ filebeat.inputs:
     type: taskbuffer
   paths:
     - /var/log/panda/panda-TaskBuffer.log
-#########Multiline section###############
-#########panda-RetrialModule.log#########
+
+######### panda-ProxyCache.log #########
+- type: log
+  enabled: true
+  fields:
+    type: proxycache
+  paths:
+    - /var/log/panda/panda-ProxyCache.log
+
+######### panda-api_data_carousel.log #########
+- type: log
+  enabled: true
+  fields:
+    type: pandaapidc
+  paths:
+    - /var/log/panda/panda-api_data_carousel.log
+
+######### panda-DataCarousel.log #########
+- type: log
+  enabled: true
+  exclude_lines: ['DEBUG']
+  fields:
+    type: datacarousel
+  paths:
+    - /var/log/panda/panda-DataCarousel.log
+
+######### Multiline section ###############
+######### panda-RetrialModule.log #########
 - type: log
   enabled: true
   fields:
@@ -195,7 +221,7 @@ filebeat.inputs:
     match: after
   paths:
     - /var/log/panda/panda-RetrialModule.log
-#########panda-setupper.log#########
+######### panda-setupper.log #########
 - type: log
   enabled: true
   fields:
@@ -207,7 +233,7 @@ filebeat.inputs:
     match: after
   paths:
     - /var/log/panda/panda-setupper.log
-########panda-DBProxyFiltered.log######
+######## panda-DBProxyFiltered.log ######
 - type: log
   enabled: true
   fields:
@@ -218,7 +244,7 @@ filebeat.inputs:
     match: after
   paths:
     - /var/log/panda/panda-DBProxyFiltered.log
-#########panda-Entry.log#########
+######### panda-Entry.log #########
 - type: log
   enabled: true
   fields:
@@ -230,7 +256,7 @@ filebeat.inputs:
     match: after
   paths:
     - /var/log/panda/panda-Entry.log
-#########panda.log#########
+######### panda.log #########
 - type: log
   enabled: true
   fields:
@@ -241,7 +267,7 @@ filebeat.inputs:
     match: after
   paths:
     - /var/log/panda/panda.log
-#########panda.add.log#########
+######### panda.add.log #########
 - type: log
   enabled: true
   exclude_lines: ['DEBUG']
@@ -254,7 +280,7 @@ filebeat.inputs:
   paths:
     - /var/log/panda/panda.add
 
-#########panda-recover_lost_files#########
+######### panda-recover_lost_files #########
 - type: log
   enabled: true
   exclude_lines: ['DEBUG']
@@ -266,22 +292,6 @@ filebeat.inputs:
     match: after
   paths:
     - /var/log/panda/panda-recover_lost_files.log
-
-#########panda-ProxyCache.log#########
-- type: log
-  enabled: true
-  fields:
-    type: proxycache
-  paths:
-    - /var/log/panda/panda-ProxyCache.log
-
-#########panda-api_data_carousel.log #########
-- type: log
-  enabled: true
-  fields:
-    type: pandaapidc
-  paths:
-    - /var/log/panda/panda-api_data_carousel.log
 
 output.logstash:
   hosts: ["aipanda111:5044", "aipanda112:5044", ]
