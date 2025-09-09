@@ -221,15 +221,6 @@ filebeat.inputs:
 - type: log
   enabled: true
   exclude_lines: ['DEBUG']
-  multiline:
-    pattern: 'get_requests_to_stage source_rse_gshare_stats_df'
-    negate: true
-    match: after
-    processors:
-      - drop_event:
-          when:
-            contains:
-              message: "get_requests_to_stage source_rse_gshare_stats_df"
   fields:
     type: datacarousel
   paths:
