@@ -199,15 +199,6 @@ filebeat.inputs:
   paths:
     - /var/log/panda/panda-api_data_carousel.log
 
-######### panda-DataCarousel.log #########
-- type: log
-  enabled: true
-  exclude_lines: ['DEBUG']
-  fields:
-    type: datacarousel
-  paths:
-    - /var/log/panda/panda-DataCarousel.log
-
 ######### Multiline section ###############
 ######### panda-RetrialModule.log #########
 - type: log

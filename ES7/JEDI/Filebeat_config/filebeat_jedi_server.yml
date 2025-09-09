@@ -217,6 +217,15 @@ filebeat.inputs:
     pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
     negate: true
     match: after
+######### panda-DataCarousel.log #########
+- type: log
+  enabled: true
+  exclude_lines: ['DEBUG']
+  fields:
+    type: datacarousel
+  paths:
+    - /var/log/panda/panda-DataCarousel.log
+
 output.logstash:
   compression_level: 3
   hosts: ["aipanda111:5044", "aipanda112:5044", ]
