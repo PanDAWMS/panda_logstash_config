@@ -45,6 +45,17 @@ filebeat.inputs:
     pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
     negate: true
     match: after
+#########social.log#########
+- type: log
+  enabled: true
+  fields:
+    type: sociallog
+  paths:
+    - /opt/prod/logs/logfile.social
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after
 output.logstash:
   hosts: ["aipanda111:5044"]
   worker: 4
