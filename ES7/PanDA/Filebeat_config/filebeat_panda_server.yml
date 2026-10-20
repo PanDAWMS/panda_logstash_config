@@ -283,7 +283,24 @@ filebeat.inputs:
     match: after
   paths:
     - /var/log/panda/panda-recover_lost_files.log
+######### panda-token_cache.log #########
+- type: log
+  enabled: true
 
+  fields:
+    type: token_cache
+
+  paths:
+    - /var/log/panda/panda-token_cache.log
+
+  multiline:
+    type: pattern
+    pattern: 'panda\.log\.token_cache:[[:space:]]+DEBUG[[:space:]]+=+ start =+[[:space:]]*$'
+    negate: true
+    match: after
+    flush_pattern: 'panda\.log\.token_cache:[[:space:]]+DEBUG[[:space:]]+done[[:space:]]*$'
+    max_lines: 10000
+    timeout: 5m
 output.logstash:
   hosts: ["aipanda111:5044", "aipanda112:5044", ]
   worker: 4
